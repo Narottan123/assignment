@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
+const baseUrl = "https://assignment3-s2bm.onrender.com";
 const Projects = () => {
   const [projects, setProjects] = useState([]);
   useEffect(() => {
     async function fetchdata() {
       try {
-        const response = await fetch("/api/projectdetail");
+        const response = await fetch(`${baseUrl}/api/projectdetail`);
         const data = await response.json();
         setProjects(data);
       } catch (err) {

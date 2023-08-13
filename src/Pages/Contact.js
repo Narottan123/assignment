@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-
+const baseUrl = "https://assignment3-s2bm.onrender.com";
 const Contact = () => {
   const [data, setData] = useState({
     fullName: "",
@@ -22,7 +22,7 @@ const Contact = () => {
     e.preventDefault(); // Prevents the default form submission behavior
 
     try {
-      await axios.post("/api/data", data); //send data into backend endpoint
+      await axios.post(`${baseUrl}/api/data`, data); //send data into backend endpoint
       console.log("Form data sent to the server");
     } catch (error) {
       console.error("Error sending form data:", error);
